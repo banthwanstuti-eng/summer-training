@@ -1,23 +1,20 @@
-console.log("hello world");
-alert("Welcome To js");
-let name = "Rahul";
-let age = 20;
+function updateClock(){
 
-console.log(name);
-console.log(age);
-let student = prompt("Enter your name");
-alert("Welcome " + student);
-let a = 10;
-let b = 20;
+    let now = new Date();
 
-let sum = a + b;
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
 
-console.log("Sum = " + sum);
-let studentName = prompt("Enter your name");
-let department = prompt("Enter your department");
+    hours = String(hours).padStart(2,'0');
+    minutes = String(minutes).padStart(2,'0');
+    seconds = String(seconds).padStart(2,'0');
 
-alert("Welcome " + studentName);
+    let time = hours + ":" + minutes + ":" + seconds;
 
-console.log("Name: " + studentName);
-console.log("Department: " + department);
+    document.getElementById("clock").innerHTML = time;
+}
 
+setInterval(updateClock,1000);
+
+updateClock();
